@@ -1,0 +1,19 @@
+.form_type_account {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 358px;
+  place-self: center;
+}
+
+@media screen and (max-width: 768px) {
+  .form_type_account {
+    max-width: 320px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .form_type_account {
+    margin-top: 41px;
+    max-width: 260px;
+  }
+}

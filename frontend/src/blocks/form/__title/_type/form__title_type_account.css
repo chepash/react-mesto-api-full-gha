@@ -1,0 +1,21 @@
+.form__title_type_account {
+  margin: 0;
+  text-align: center;
+
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .form__title_type_account {
+    font-size: 21px;
+    line-height: 1.22;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form__title_type_account {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0em;
+  }
+}

@@ -1,0 +1,22 @@
+.popup__image-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  cursor: default;
+
+  /* оцентровываем контейнер среди трёх колонок попапа */
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__image-container {
+    /* теперь весь попап всего одна колонка, а не три. Кнопка закрытия будет сверху*/
+    grid-column-start: 1;
+    place-self: center;
+  }
+}

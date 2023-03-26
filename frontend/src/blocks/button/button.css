@@ -1,0 +1,11 @@
+.button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  /* обнуляем стили кнопок */
+  box-sizing: border-box;
+  background: none;
+  box-shadow: none;
+  border: none;
+}

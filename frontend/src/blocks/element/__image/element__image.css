@@ -1,0 +1,14 @@
+.element__image {
+  margin: 0;
+  padding: 0;
+
+  /* обрезаем прямоугольную картинку */
+  object-fit: cover;
+  height: 282px;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  cursor: pointer;
+}
+

@@ -1,0 +1,18 @@
+.form__input_type_popup {
+  color: #000000;
+  border-bottom: 1px solid;
+  border-bottom-color: #00000020;
+  padding: 0 0 8px 0;
+
+  /* чтобы автозаполнение браузером на девките не выделяло инпуты стандартным цветом
+  -webkit-text-fill-color здесь лучше не задавать, иначе так как
+  цвет текст инпута отличается от цвета текста плейхолдера */
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset;
+}
+
+.form__input_type_popup::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #c4c4c4;
+}

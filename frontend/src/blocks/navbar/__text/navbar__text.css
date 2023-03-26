@@ -1,0 +1,17 @@
+.navbar__text {
+  margin: 0 24px 0 0;
+  padding: 0;
+  width: min-content;
+
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0em;
+}
+
+@media screen and (max-width: 540px) {
+  .navbar__text {
+    margin: 0;
+  }
+}

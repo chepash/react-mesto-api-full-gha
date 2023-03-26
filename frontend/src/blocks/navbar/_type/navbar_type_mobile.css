@@ -1,0 +1,26 @@
+.navbar_type_mobile {
+  width: 100%;
+  padding: 40px 0 40px 0;
+  grid-template-columns: min-content min-content;
+  justify-content: center;
+  justify-items: center;
+  border-bottom: 1px solid #54545470;
+
+  position: absolute;
+  margin: -143px 0 0 0;
+  transition: all 0.2s ease-in;
+}
+
+@media screen and (min-width: 769px) {
+  .navbar_type_mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .navbar_type_mobile {
+    justify-content: center;
+    grid-template-columns: min-content;
+    row-gap: 18px;
+  }
+}

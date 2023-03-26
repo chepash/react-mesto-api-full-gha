@@ -1,0 +1,41 @@
+.button_type_edit {
+  width: 24px;
+  height: 24px;
+  background-color: #00000000;   /* прозрачный фон */
+  border: 1px solid #fff;
+
+  background-image: url("../../../images/button_edit.svg");
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  grid-column-start: 2;
+  align-self: center;
+}
+
+.button_type_edit:hover {
+  transition: opacity 0.2s ease;
+  opacity: 0.6;
+}
+
+
+@media screen and (max-width: 768px) {
+  .button_type_edit {
+    grid-column-start: 2;
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .button_type_edit {
+    grid-column-start: 3;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .button_type_edit {
+    width: 18px;
+    height: 18px;
+  }
+}

@@ -1,0 +1,8 @@
+.element__footer {
+  margin: 0;
+  padding: 25px 21px 25px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,13 @@
+/* адаптивные отступы по бокам */
+@media screen and (max-width: 1000px) {
+  .section_size_narrow {
+    max-width: 88vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .section_size_narrow {
+    padding: 0;
+    max-width: 282px;
+  }
+}

@@ -1,0 +1,29 @@
+.profile__info {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+
+
+  display: grid;
+
+
+  grid-template-columns: auto 1fr;
+  grid-template-rows: min-content min-content;
+  column-gap: 18px;
+  row-gap: 5px;
+}
+
+@media screen and (max-width: 540px) {
+  .profile__info {
+  /* 3 колонки чтобы центральная колонка при 320px была в центре.*/
+  grid-template-columns: 12px auto min-content;
+  grid-template-rows: min-content min-content;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__info {
+    column-gap: 10px;
+  }
+}
