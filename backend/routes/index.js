@@ -9,10 +9,6 @@ router.use('/users', usersRoutes);
 router.use('/cards', cardsRoutes);
 router.post('/signout', logout);
 
-router.get('/signout', (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Выход' });
-});
-
 router.use('*', (req, res, next) => {
   const err = new NotFoundError();
   err.message = 'Page not found';
