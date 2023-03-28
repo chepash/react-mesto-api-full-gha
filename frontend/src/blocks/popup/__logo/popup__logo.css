@@ -1,0 +1,10 @@
+.popup__logo {
+  margin: 25px 0 32px 0;
+  justify-self: center;
+}
+
+@media screen and (max-width: 400px) {
+  .popup__logo {
+    margin: 15px 0 40px 0;
+  }
+}

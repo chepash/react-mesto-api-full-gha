@@ -1,0 +1,12 @@
+.popup__close {
+  /* способ поместить кнопку закрытия в угол без отрицательных отступов */
+  grid-column-start: 3;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__close {
+    /* теперь весь попап всего одна колонка, а не 3, кнопка закрытия будет сверху*/
+    grid-column-start: 1;
+    place-self: end;
+  }
+}

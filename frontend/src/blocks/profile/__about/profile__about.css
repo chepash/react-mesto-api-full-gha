@@ -1,0 +1,37 @@
+.profile__about {
+  margin: 0;
+  padding: 0;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+
+  grid-row-start: 2;
+
+  /* Если название профессии оооочень длинное */
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__about {
+    font-size: 16px;
+    line-height: 1.21;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .profile__about {
+    grid-column-start: 2;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .profile__about {
+    font-size: 14px;
+  }
+}

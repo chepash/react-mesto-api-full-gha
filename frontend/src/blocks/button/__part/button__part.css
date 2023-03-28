@@ -1,0 +1,14 @@
+@media screen and (max-width: 768px) {
+  .button__part {
+    position: relative;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-top: 6px;
+    transition: all 0.3s ease-in-out;
+  }
+  .button__part:first-of-type {
+    margin-top: 0;
+  }
+}

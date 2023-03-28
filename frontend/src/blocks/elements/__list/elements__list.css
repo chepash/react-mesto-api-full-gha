@@ -1,0 +1,18 @@
+.elements__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  column-gap: 17px;
+  row-gap: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .elements__list {
+    grid-template-columns: repeat(2, minmax(282px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .elements__list {
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  }
+}

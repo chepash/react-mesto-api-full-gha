@@ -1,0 +1,19 @@
+.form__inputs-container {
+  margin: 44px 0 0 0;
+  padding: 0;
+
+  border: none;
+  max-height: min-content;
+
+  display: grid;
+  grid-template-rows: repeat(autofit, min-content);
+  row-gap: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .form__inputs-container {
+    margin: 70px 0 0 0;
+    font-size: 21px;
+    line-height: 1.22;
+  }
+}

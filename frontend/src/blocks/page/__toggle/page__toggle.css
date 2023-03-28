@@ -1,0 +1,64 @@
+.page__toggle {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.page__toggle:checked + .button_type_hamburger .top-bun {
+  width: 24px;
+  top: 8px;
+  transform: rotateZ(45deg);
+}
+.page__toggle:checked + .button_type_hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+.page__toggle:checked + .button_type_hamburger .meat {
+  width: 24px;
+  top: 0;
+  transform: rotateZ(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .page__toggle:checked ~ .navbar_type_mobile {
+    margin: 0;
+  }
+
+  .page__toggle:checked ~ .button_type_hamburger {
+    top: 138px;
+  }
+
+  .page__toggle:checked ~ .header {
+    transform: translate(0, 103px);
+  }
+
+  .page__toggle:checked ~ .content {
+    transform: translate(0, 103px);
+  }
+
+  .page__toggle:checked ~ .footer {
+    transform: translate(0, 103px);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .page__toggle:checked ~ .navbar_type_mobile {
+    margin: 0;
+  }
+
+  .page__toggle:checked ~ .button_type_hamburger {
+    top: 178px;
+  }
+
+  .page__toggle:checked ~ .header {
+    transform: translate(0, 143px);
+  }
+
+  .page__toggle:checked ~ .content {
+    transform: translate(0, 143px);
+  }
+
+  .page__toggle:checked ~ .footer {
+    transform: translate(0, 143px);
+  }
+}

@@ -1,0 +1,17 @@
+.navbar {
+  margin: 7px 0 0 0;
+  padding: 0;
+  width: min-content;
+
+  display: grid;
+  grid-template-columns: min-content min-content;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    margin: 0;
+    width: 100%;
+
+    align-self: center;
+  }
+}

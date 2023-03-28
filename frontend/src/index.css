@@ -1,0 +1,96 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+@import url(./blocks/page/page.css);
+@import url(./blocks/page/__toggle/page__toggle.css);
+
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/logo.css);
+
+@import url(./blocks/navbar/navbar.css);
+@import url(./blocks/navbar/_type/navbar_type_mobile.css);
+@import url(./blocks/navbar/_hidden/navbar_hidden.css);
+@import url(./blocks/navbar/__text/navbar__text.css);
+@import url(./blocks/navbar/__link/navbar__link.css);
+@import url(./blocks/navbar/__link/_hidden/navbar__link_hidden.css);
+@import url(./blocks/navbar/__button/navbar__button.css);
+@import url(./blocks/navbar/__button/_type/navbar__button_type_mobile.css);
+
+@import url(./blocks/content/content.css);
+
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__avatar-overlay/profile__avatar-overlay.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__about/profile__about.css);
+
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/elements/__list/elements__list.css);
+
+@import url(./blocks/element/element.css);
+@import url(./blocks/element/__image/element__image.css);
+@import url(./blocks/element/__footer/element__footer.css);
+@import url(./blocks/element/__caption/element__caption.css);
+@import url(./blocks/element/__like-wrap/element__like-wrap.css);
+@import url(./blocks/element/__like-count/element__like-count.css);
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__copyright/footer__copyright.css);
+
+/* popups */
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__image-container/popup__image-container.css);
+@import url(./blocks/popup/__image/popup__image.css);
+@import url(./blocks/popup/__image-caption/popup__image-caption.css);
+@import url(./blocks/popup/__logo/popup__logo.css);
+@import url(./blocks/popup/__text/popup__text.css);
+@import url(./blocks/popup/_type/popup_type_image.css);
+
+/* формы */
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/_type/form_type_account.css);
+@import url(./blocks/form/_type/form_type_confirmation.css);
+@import url(./blocks/form/__title/form__title.css);
+@import url(./blocks/form/__title/_type/form__title_type_account.css);
+@import url(./blocks/form/__inputs-container/form__inputs-container.css);
+@import url(./blocks/form/__inputs-container/_type/form__inputs-container_type_account.css);
+@import url(./blocks/form/__input-wrap/form__input-wrap.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__input/_type/form__input_type_popup.css);
+@import url(./blocks/form/__input/_type/form__input_type_account.css);
+@import url(./blocks/form/__input/_type/form__input_type_error.css);
+
+@import url(./blocks/form/__error/form__error.css);
+@import url(./blocks/form/__error/_visible/form__error_visible.css);
+@import url(./blocks/form/__error/_type/form__error_type_account.css);
+@import url(./blocks/form/__text/form__text.css);
+@import url(./blocks/form/__link/form__link.css);
+
+/* кнопки */
+@import url(./blocks/button/button.css);
+@import url(./blocks/button/__part/button__part.css);
+@import url(./blocks/button/_type/button_type_hamburger.css);
+@import url(./blocks/button/_type/button_type_edit.css);
+@import url(./blocks/button/_type/button_type_add.css);
+@import url(./blocks/button/_type/button_type_like.css);
+@import url(./blocks/button/_type/button_type_delete.css);
+@import url(./blocks/button/_type/button_type_submit.css);
+@import url(./blocks/button/_type/button_type_close.css);
+@import url(./blocks/button/_color/button_color_white.css);
+@import url(./blocks/button/_active/button_active.css);
+@import url(./blocks/button/_hidden/button_hidden.css);
+@import url(./blocks/button/_disabled/button_disabled.css);
+
+/* блок для обнуления стилей и задавания геомерии нектоторым секциям */
+@import url(./blocks/section/section.css); /*box-sizing: border-box*/
+@import url(./blocks/section/_size/section_size_narrow.css); /*адаптивные отступы у всех секций кроме header */
+
+/* миксы */
+@import url(./blocks/page/__container/page__container.css); /* min-max width нашего сайта*/
+@import url(./blocks/page/__content/page__content.css); /*отступ блока content от header и от footer */
+@import url(./blocks/page/__list/page__list.css); /*переопредеяем стили всех возможных списков*/
+@import url(./blocks/content/__section/content__section.css); /*оцентровка и ширина 100% секций внутри блока content */
+@import url(./blocks/popup/__close/popup__close.css); /* позиционирование кнопки close */

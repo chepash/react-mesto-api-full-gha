@@ -1,0 +1,19 @@
+.element__like-count {
+  margin: 0;
+  padding: 0;
+
+  /* вдруг картинка будет безумно популярной */
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  color: #000000;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.23;
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+.header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #54545470;
+  flex: 0; /* для липкого хэдера */
+
+  display: grid;
+  grid-template-columns: min-content min-content;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  transition: transform 0.2s ease-in;
+}
+
+/* плавное появление отступа(от 0px до 30px) по бокам у элементов хедера
+При этом не затрагиваем белый border всего header*/
+/* 30px + 880px + 30px = 940px*/
+@media screen and (max-width: 940px) {
+  .header {
+    padding: 0 calc((940px - 100vw) / 2) 0;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .header {
+    padding: 0 30px 0;
+  }
+}
