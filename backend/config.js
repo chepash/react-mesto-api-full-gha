@@ -14,6 +14,8 @@ const corsOptions = {
   ],
   credentials: true,
   maxAge: 60, // 60 = 1min кэшируем одинаковые preflight options запросы на 1min
+  optionsSuccessStatus: 204,
+  // 204 для уверреной работы авторизации через куки в preflight options запросах
 };
 
 module.exports = {
