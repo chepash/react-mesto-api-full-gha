@@ -10,6 +10,7 @@ const corsOptions = {
     'http://localhost:3000',
     'https://praktikum.tk',
     'http://praktikum.tk',
+    'https://chepa.nomoredomains.work',
   ],
   credentials: true,
   maxAge: 60, // 60 = 1min кэшируем одинаковые preflight options запросы на 1min
