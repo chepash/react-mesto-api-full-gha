@@ -1,7 +1,11 @@
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const User = require('../models/user');
+
 const NotFoundError = require('../errors/NotFoundError');
+const BadRequestError = require('../errors/BadRequestError');
+const DuplicateKeyError = require('../errors/DuplicateKeyError');
 
 const { STATUS_OK, STATUS_OK_CREATED } = require('../utils/constants');
 
@@ -39,7 +43,18 @@ module.exports.createUser = (req, res, next) => {
       email: user.email,
       _id: user._id,
     }))
-    .catch(next));
+    .catch((err) => {
+      if (err.code === 11000) {
+        const conflictErr = new DuplicateKeyError();
+        next(conflictErr);
+      } else if (err instanceof mongoose.Error.ValidationError) {
+        const validationError = new BadRequestError();
+        validationError.message = err.message;
+        next(validationError);
+      } else {
+        next(err);
+      }
+    }));
 };
 
 // GET /users/me
@@ -68,7 +83,15 @@ module.exports.updateUserInfo = (req, res, next) => {
     throw new NotFoundError();
   })
     .then((user) => res.status(STATUS_OK).send(user))
-    .catch(next);
+    .catch((err) => {
+      if (err instanceof mongoose.Error.ValidationError) {
+        const validationError = new BadRequestError();
+        validationError.message = err.message;
+        next(validationError);
+      } else {
+        next(err);
+      }
+    });
 };
 
 // PATCH /users/me/avatar
@@ -82,5 +105,13 @@ module.exports.updateUserAvatar = (req, res, next) => {
     throw new NotFoundError();
   })
     .then((user) => res.status(STATUS_OK).send(user))
-    .catch(next);
+    .catch((err) => {
+      if (err instanceof mongoose.Error.ValidationError) {
+        const validationError = new BadRequestError();
+        validationError.message = err.message;
+        next(validationError);
+      } else {
+        next(err);
+      }
+    });
 };

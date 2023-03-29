@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const {
   STATUS_OK,
   STATUS_OK_CREATED,
@@ -5,6 +7,7 @@ const {
 
 const Card = require('../models/card');
 const NotFoundError = require('../errors/NotFoundError');
+const BadRequestError = require('../errors/BadRequestError');
 const WrongCardOwnerError = require('../errors/WrongCardOwnerError');
 
 // GET /cards
@@ -24,7 +27,15 @@ module.exports.createCard = (req, res, next) => {
       .then((populatedCard) => {
         res.status(STATUS_OK_CREATED).send(populatedCard);
       }))
-    .catch(next);
+    .catch((err) => {
+      if (err instanceof mongoose.Error.ValidationError) {
+        const validationError = new BadRequestError();
+        validationError.message = err.message;
+        next(validationError);
+      } else {
+        next(err);
+      }
+    });
 };
 
 // DELETE /cards/:cardId
