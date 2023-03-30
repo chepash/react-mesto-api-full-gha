@@ -18,11 +18,9 @@ module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
 
   return Card.create({ name, link, owner: req.user._id })
-    .then((card) => Card.findById(card._id)
-      .populate(['owner', 'likes'])
-      .then((populatedCard) => {
-        res.status(STATUS_OK_CREATED).send(populatedCard);
-      }))
+    .then((card) => {
+      res.status(STATUS_OK_CREATED).send(card);
+    })
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         const validationError = new BadRequestError();
@@ -42,7 +40,6 @@ module.exports.deleteCard = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError();
     })
-    .populate(['owner', 'likes'])
     .then((card) => {
       if (card.owner._id.toString() === req.user._id) {
         return card.deleteOne();
@@ -62,7 +59,6 @@ module.exports.likeCard = (req, res, next) => Card.findByIdAndUpdate(
   .orFail(() => {
     throw new NotFoundError();
   })
-  .populate(['owner', 'likes'])
   .then((card) => res.send(card))
   .catch(next);
 
@@ -75,6 +71,5 @@ module.exports.dislikeCard = (req, res, next) => Card.findByIdAndUpdate(
   .orFail(() => {
     throw new NotFoundError();
   })
-  .populate(['owner', 'likes'])
   .then((card) => res.send(card))
   .catch(next);

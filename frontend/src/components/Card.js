@@ -6,12 +6,12 @@ function Card({
 }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const isLikedByMe = card.likes.some((ownerData) => ownerData._id === currentUser._id);
+  const isLikedByMe = card.likes.some((id) => id === currentUser._id);
 
   // Определяем, являемся ли мы владельцем текущей карточки
   let isOwn = false;
   if (card.owner) {
-    isOwn = card.owner._id === currentUser._id;
+    isOwn = card.owner === currentUser._id;
   }
 
   function handleClick() {

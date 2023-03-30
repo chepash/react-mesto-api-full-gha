@@ -172,7 +172,7 @@ function App() {
 
   function handleCardLike(currentCard) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLikedByMe = currentCard.likes.some((ownerData) => ownerData._id === currentUser._id);
+    const isLikedByMe = currentCard.likes.some((id) => id === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
@@ -300,7 +300,7 @@ function App() {
                   cards={cards}
                   component={Main}
                 />
-                )}
+              )}
             />
 
             <Route path="/sign-in" element={<Login handleLogin={handleLogin} />} />
