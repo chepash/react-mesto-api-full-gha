@@ -7,7 +7,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const DuplicateKeyError = require('../errors/DuplicateKeyError');
 
-const { STATUS_OK, STATUS_OK_CREATED } = require('../utils/constants');
+const { STATUS_OK_CREATED } = require('../utils/constants');
 
 // GET /users/:id
 module.exports.getUser = (req, res, next) => {
@@ -20,13 +20,13 @@ module.exports.getUser = (req, res, next) => {
       // поэтому валидацию данных перед запросом в базу провожу
       throw new NotFoundError();
     })
-    .then((user) => res.status(STATUS_OK).send(user))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
 // GET /users
 module.exports.getUsers = (req, res, next) => User.find({})
-  .then((users) => res.status(STATUS_OK).send(users))
+  .then((users) => res.send(users))
   .catch(next);
 
 // POST /signup
@@ -65,7 +65,7 @@ module.exports.getMe = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError();
     })
-    .then((user) => res.status(STATUS_OK).send(user))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
@@ -82,7 +82,7 @@ module.exports.updateUserInfo = (req, res, next) => {
   }).orFail(() => {
     throw new NotFoundError();
   })
-    .then((user) => res.status(STATUS_OK).send(user))
+    .then((user) => res.send(user))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         const validationError = new BadRequestError();
@@ -104,7 +104,7 @@ module.exports.updateUserAvatar = (req, res, next) => {
   }).orFail(() => {
     throw new NotFoundError();
   })
-    .then((user) => res.status(STATUS_OK).send(user))
+    .then((user) => res.send(user))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         const validationError = new BadRequestError();

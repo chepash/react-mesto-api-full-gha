@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
-const {
-  STATUS_OK,
-  STATUS_OK_CREATED,
-} = require('../utils/constants');
+const { STATUS_OK_CREATED } = require('../utils/constants');
 
 const Card = require('../models/card');
 const NotFoundError = require('../errors/NotFoundError');
@@ -13,8 +10,7 @@ const WrongCardOwnerError = require('../errors/WrongCardOwnerError');
 // GET /cards
 module.exports.getCards = (req, res, next) => Card.find({})
   .sort({ createdAt: -1 })
-  .populate(['owner', 'likes'])
-  .then((cards) => res.status(STATUS_OK).send(cards))
+  .then((cards) => res.send(cards))
   .catch(next);
 
 // POST /cards
@@ -53,7 +49,7 @@ module.exports.deleteCard = (req, res, next) => {
       }
       throw new WrongCardOwnerError();
     })
-    .then((cards) => res.status(STATUS_OK).send(cards))
+    .then((cards) => res.send(cards))
     .catch(next);
 };
 
@@ -67,7 +63,7 @@ module.exports.likeCard = (req, res, next) => Card.findByIdAndUpdate(
     throw new NotFoundError();
   })
   .populate(['owner', 'likes'])
-  .then((card) => res.status(STATUS_OK).send(card))
+  .then((card) => res.send(card))
   .catch(next);
 
 // DELETE /cards/:cardId/likes
@@ -80,5 +76,5 @@ module.exports.dislikeCard = (req, res, next) => Card.findByIdAndUpdate(
     throw new NotFoundError();
   })
   .populate(['owner', 'likes'])
-  .then((card) => res.status(STATUS_OK).send(card))
+  .then((card) => res.send(card))
   .catch(next);
