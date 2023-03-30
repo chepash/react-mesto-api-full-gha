@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.29.44
+IP 158.160.29.44
 
 Frontend https://chepa.nomoredomains.work/
 
