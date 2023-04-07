@@ -3,11 +3,18 @@ const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const rateLimit = require('express-rate-limit');
 
 const celebrate = require('celebrate');
 
 const routes = require('./routes');
-const { PORT, DB_ADDRESS, corsOptions } = require('./config');
+
+const {
+  PORT,
+  DB_ADDRESS,
+  corsOptions,
+  limiterOptions,
+} = require('./config');
 
 const { appErrorHandler } = require('./utils/utils');
 const { createUser } = require('./controllers/users');
@@ -24,6 +31,7 @@ mongoose.connect(DB_ADDRESS, {
 
 const app = express();
 
+app.use(rateLimit(limiterOptions));
 app.use(helmet());
 app.use(cors(corsOptions));
 app.use(cookieParser());
